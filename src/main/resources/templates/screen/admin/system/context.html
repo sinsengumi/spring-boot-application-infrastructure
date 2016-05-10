@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>Context</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <h3>ApplicationContext</h3>
+    <p>ApplicationContext の情報です。</p>
+    <table border="1">
+      <tr>
+        <th>displayName</th>
+        <td th:text="${context.displayName}">${context.displayName}</td>
+      </tr>
+      <tr>
+        <th>id</th>
+        <td th:text="${context.id}">${context.id}</td>
+      </tr>
+      <tr>
+        <th>startupDate</th>
+        <td th:text="${context.startupDate}">${context.startupDate}</td>
+      </tr>
+      <tr>
+        <th>environment</th>
+        <td th:text="${context.environment}">${context.environment}</td>
+      </tr>
+    </table>
+
+    <h3>Components</h3>
+    <p>
+      現在、登録されている Component は <strong th:text="${context.beanDefinitionCount}">${context.beanDefinitionCount}</strong> 個です。
+    </p>
+    <table border="1">
+      <tr>
+        <th>No</th>
+        <th>Scope</th>
+        <th>BeanName / ClassName</th>
+      </tr>
+      <tr th:each="definition,iterStat : ${beanDefinitions}">
+        <td class="text-center" th:text="${iterStat.count}">1</td>
+        <td class="text-center" th:text="${definition.value.scope}">scope</td>
+        <td>
+          <strong th:text="${#strings.abbreviate(definition.key, 100)}">${definition.key}</strong>
+          <br />
+          <em th:text="${#strings.abbreviate(definition.value.beanClassName, 100)}">${definition.value.beanClassName}</em>
+        </td>
+      </tr>
+    </table>
+  </th:block>
+</body>
+</html>

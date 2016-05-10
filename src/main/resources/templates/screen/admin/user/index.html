@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>User</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <span class="complete" th:text="${completeMessage}">completeMessage</span>
+
+    <p><a th:href="@{/admin/user/create}">新規作成</a></p>
+
+    <table border="1">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <tr th:each="user : ${users}">
+        <td th:text="${user.id}">id</td>
+        <td th:text="${user.name}">Name</td>
+        <td th:text="${user.age}">Age</td>
+      </tr>
+    </table>
+  </th:block>
+</body>
+</html>

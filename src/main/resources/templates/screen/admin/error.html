@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>Error</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <p>
+      ERROR CODE : <span th:text="${errorCode}">errorCode</span>
+    </p>
+    <pre th:utext="${stackTrace}">stackTrace</pre>
+  </th:block>
+</body>
+</html>

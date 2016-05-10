@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <!-- JMX の有効化 -->
+  <jmxConfigurator />
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{ISO8601} %-5p [%t] %c{2} \(%L\) - [%X{REQUEST_ID:-undefined}][%X{LOGIN_USER_ID:-undefined}] %m%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

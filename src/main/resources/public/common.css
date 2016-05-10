@@ -1,0 +1,129 @@
+html {
+  display: block;
+  zoom: 1; /* IEのみ */
+}
+
+head, meta, link, style, script {
+  display: none;
+}
+
+body {
+  display: block;
+  margin: 0;
+  padding: 0;
+  zoom: 1; /* IEのみ */
+  font-family: Helvetica;
+}
+
+div {
+  display: block;
+}
+
+h1 {
+  display: block;
+  margin: 0.67em 0; /* Webkit, Firefoxは、margin-before: 0.67em; margin-after: 0.67em; */
+  font-size: 2em;
+  font-weight: bold;
+  page-break-after: avoid; /* IEのみ */
+}
+
+h2, :match (article, aside, nav, section ) h1 {
+  display: block;
+  margin: 0.83em 0; /* Webkit, Firefoxは、margin-before: 0.83em; margin-after: 0.83em; */
+  font-size: 1.5em;
+  font-weight: bold;
+  page-break-after: avoid; /* IEのみ */
+}
+
+h3, :match (article, aside, nav, section ) :match (article, aside, nav, section ) h1 {
+  display: block;
+  margin: 1em 0; /* Webkit, Firefoxは、margin-before: 1em; margin-after: 1em; */
+  font-size: 1.17em;
+  font-weight: bold;
+  page-break-after: avoid; /* IEのみ */
+}
+
+p {
+  display: block;
+  margin: 1em 0; /* Webkit, Firefoxは、margin-before: 1em; margin-after: 1em; */
+}
+
+ul { /* ol　もほぼ同じ */
+  display: block;
+  margin: 1em 0; /* Webkit, Firefoxは、margin-before: 1em; margin-after: 1em; */
+  padding-start: 40px; /* IEは、padding-left: 30pt; Operaは、padding-left: 40px; */
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+li {
+  display: list-item;
+}
+
+dl {
+  display: block;
+  margin: 1em 0; /* Webkit, Firefoxは、margin-before: 1em; margin-after: 1em; */
+}
+
+dt {
+  display: block;
+}
+
+dd {
+  display: block;
+  margin-left: 40px; /* Webkit, Firefoxは、margin-start: 40px; */
+}
+
+img {
+  zoom: 1; /* IEのみ */
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-weight: italic;
+}
+
+header {
+  background-color: #000;
+  color: #FFF;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #000;
+  color: #FFF;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.content {
+  margin: 20px;
+}
+
+th {
+  text-align: left;
+  padding: 5px;
+}
+
+td {
+  text-align: left;
+  padding: 5px;
+}
+
+pre {
+  border: 1px dotted #000;
+  padding: 5px 10px;
+}
+
+.error {
+  color: red;
+}
+
+.complete {
+  color: green;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>Batch</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <table border="1">
+      <tr>
+        <th width="3%" class="text-center">No</th>
+        <th width="40%">Name/Method</th>
+        <th>Cron（書式 : 秒 分 時 日 月 曜日）</th>
+      </tr>
+      <tr th:each="batch,iterStat : ${batches}">
+        <td class="text-center" th:text="${iterStat.count}">1</td>
+        <td>
+          <strong th:text="${batch.method.name}">batch.method.name</strong>
+          <br />
+          <em th:text="${batch.method}">batch.method</em>
+        </td>
+        <td><kbd th:text="${batch.cron}">batch.cron</kbd></td>
+      </tr>
+    </table>
+  </th:block>
+</body>
+</html>

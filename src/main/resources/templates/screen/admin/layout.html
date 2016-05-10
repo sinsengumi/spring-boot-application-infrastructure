@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title layout:title-pattern="$CONTENT_TITLE | $DECORATOR_TITLE">SpringDemo</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" th:href="@{/public/common.css}" />
+</head>
+<body>
+  <header>Spring Boot で Boot した後に作る Web アプリケーション基盤</header>
+
+  <div class="content">
+    <p><a th:href="@{/admin/}">TOP へ</a></p>
+    <hr />
+    <th:block layout:fragment="content">
+      <p>Default layout content</p>
+    </th:block>
+  </div>
+
+  <footer>Copyright &copy; 2016 Tomoya Yoshida. All Rights Reserved.</footer>
+</body>
+</html>

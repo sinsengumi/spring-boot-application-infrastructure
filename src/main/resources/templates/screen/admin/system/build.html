@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>Build</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <p>Build version : <span th:text="${version}">version</span></p>
+    <table border="1">
+      <tr>
+        <th width="20%">branch</th>
+        <td th:text="${gitRepositoryState.branch}">gitRepositoryState.branch</td>
+      </tr>
+      <tr>
+        <th>tags</th>
+        <td th:text="${gitRepositoryState.tags}">gitRepositoryState.tags</td>
+      </tr>
+      <tr>
+        <th>commitIdDescribe</th>
+        <td th:text="${gitRepositoryState.commitIdDescribe}">gitRepositoryState.commitIdDescribe</td>
+      </tr>
+      <tr>
+        <th>commitIdDescribeShort</th>
+        <td th:text="${gitRepositoryState.commitIdDescribeShort}">gitRepositoryState.commitIdDescribeShort</td>
+      </tr>
+      <tr>
+        <th>commitId</th>
+        <td th:text="${gitRepositoryState.commitId}">gitRepositoryState.commitId</td>
+      </tr>
+      <tr>
+        <th>commitIdAbbrev</th>
+        <td th:text="${gitRepositoryState.commitIdAbbrev}">gitRepositoryState.commitIdAbbrev</td>
+      </tr>
+      <tr>
+        <th>commitTime</th>
+        <td th:text="${#dates.format(gitRepositoryState.commitTime, 'yyyy/MM/dd HH:mm:ss')}">gitRepositoryState.commitTime</td>
+      </tr>
+      <tr>
+        <th>buildTime</th>
+        <td th:text="${#dates.format(gitRepositoryState.buildTime, 'yyyy/MM/dd HH:mm:ss')}">gitRepositoryState.buildTime</td>
+      </tr>
+      <tr>
+        <th>buildUserName</th>
+        <td th:text="${gitRepositoryState.buildUserName}">gitRepositoryState.buildUserName</td>
+      </tr>
+      <tr>
+        <th>buildUserEmail</th>
+        <td th:text="${gitRepositoryState.buildUserEmail}">gitRepositoryState.buildUserEmail</td>
+      </tr>
+      <tr>
+        <th>commitMessageFull</th>
+        <td th:text="${gitRepositoryState.commitMessageFull}">gitRepositoryState.commitMessageFull</td>
+      </tr>
+      <tr>
+        <th>commitMessageShort</th>
+        <td th:text="${gitRepositoryState.commitMessageShort}">gitRepositoryState.commitMessageShort</td>
+      </tr>
+      <tr>
+        <th>commitUserName</th>
+        <td th:text="${gitRepositoryState.commitUserName}">gitRepositoryState.commitUserName</td>
+      </tr>
+      <tr>
+        <th>commitUserEmail</th>
+        <td th:text="${gitRepositoryState.commitUserEmail}">gitRepositoryState.commitUserEmail</td>
+      </tr>
+      <tr>
+        <th>remoteOriginUrl</th>
+        <td th:text="${gitRepositoryState.remoteOriginUrl}">gitRepositoryState.remoteOriginUrl</td>
+      </tr>
+    </table>
+  </th:block>
+</body>
+</html>

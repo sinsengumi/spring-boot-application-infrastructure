@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>Router</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <table border="1">
+      <tr>
+        <th>No</th>
+        <th>Site</th>
+        <th>Method</th>
+        <th>Pattern</th>
+        <th>Param</th>
+      </tr>
+      <tr th:each="requestMappingInfo,iterStat : ${requestMappingInfos}">
+        <td th:text="${iterStat.count}">1</td>
+        <td class="text-center" th:text="${requestMappingInfo.site.label}">Site</td>
+        <td class="text-center">
+          <th:block th:each="v : ${requestMappingInfo.methods}">
+            <th:block th:text="${v.name()}">Method</th:block>
+          </th:block>
+        </td>
+        <td>
+          <th:block th:each="v : ${requestMappingInfo.patterns}">
+            <th:block th:text="${v}">Pattern</th:block>
+          </th:block>
+        </td>
+        <td>
+          <th:block th:each="v : ${requestMappingInfo.params}">
+            <th:block th:text="${v}">Param</th:block>
+          </th:block>
+        </td>
+      </tr>
+    </table>
+  </th:block>
+</body>
+</html>

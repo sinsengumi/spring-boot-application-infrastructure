@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>CSRF</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <span class="complete" th:text="${completeMessage}">completeMessage</span>
+    <form method="post" th:action="@{''}" th:object="${sampleForm}">
+      <table border="1">
+        <tr>
+          <th>名前</th>
+          <td><input type="text" th:field="*{name}" /> <span class="error" th:errors="*{name}">error</span></td>
+        </tr>
+        <tr>
+          <th>年齢</th>
+          <td><input type="text" th:field="*{age}" /> <span class="error" th:errors="*{age}">error</span></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="登録" /></td>
+        </tr>
+      </table>
+    </form>
+  </th:block>
+</body>
+</html>

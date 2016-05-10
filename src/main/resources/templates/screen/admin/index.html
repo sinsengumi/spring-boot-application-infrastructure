@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="screen/admin/layout">
+<head>
+<title>Index</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <th:block layout:fragment="content">
+    <h1>Index</h1>
+    <ul>
+      <li><a th:href="@{/admin/hello(name=tanaka)}">Hello</a></li>
+      <li><a th:href="@{/admin/hello}">Hello（400）</a></li>
+      <li><a th:href="@{/admin/hello(name=yoshida)}">Hello（403）</a></li>
+      <li><a th:href="@{/admin/user}">ユーザ</a></li>
+      <li><a th:href="@{/admin/log}">Logging</a></li>
+      <li><a th:href="@{/admin/sqlInjection/search}">SQLInjection</a></li>
+      <li><a th:href="@{/admin/csrf}">CSRF</a></li>
+      <li><a th:href="@{/admin/system/router}">システム情報（Router）</a></li>
+      <li><a th:href="@{/admin/system/context}">システム情報（Context）</a></li>
+      <li><a th:href="@{/admin/system/batch}">システム情報（Batch）</a></li>
+      <li><a th:href="@{/admin/system/build}">システム情報（Build Info）</a></li>
+    </ul>
+  </th:block>
+</body>
+</html>
